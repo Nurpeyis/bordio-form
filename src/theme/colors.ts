@@ -1,8 +1,4 @@
-export interface ThemeColors {
-  [key: string]: string;
-}
-
-const colors: ThemeColors = {
+const colors = {
   white: "#fff",
   dark: "#222",
   darkBlue: "#102250",
