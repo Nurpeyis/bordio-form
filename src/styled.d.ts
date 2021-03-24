@@ -8,9 +8,9 @@ declare module "styled-components" {
       white: string;
       dark: string;
       darkBlue: string;
-      gray: string;
-      lightGray: string;
-      sandGray: string;
+      grey: string;
+      lightGrey: string;
+      sandGrey: string;
       blue: string;
     };
   }
