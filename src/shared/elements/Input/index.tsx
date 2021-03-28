@@ -1,34 +1,22 @@
-import React, { Component } from "react";
+import React, { Component, InputHTMLAttributes } from "react";
 import styled from "styled-components";
-import { FieldProps } from "formik";
 
-interface Props {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   startIcon?: Component;
 }
 
-interface InputProps {
-  startIcon?: boolean;
-}
-
-const TextField: React.FC<FieldProps & Props> = ({
-  field,
-  form,
-  startIcon,
-  ...props
-}) => {
+const Input: React.FC<Props> = ({ startIcon, ...props }) => {
   return (
-    <FieldWrapper>
+    <InputWrapper>
       {startIcon && <InputIcon>{startIcon}</InputIcon>}
-
-      <Input startIcon={!!startIcon} {...field} {...props} />
-    </FieldWrapper>
+      <InputElement startIcon={!!startIcon} {...props} />
+    </InputWrapper>
   );
 };
 
-export default TextField;
+export default Input;
 
-const FieldWrapper = styled.div`
-  margin-bottom: 20px;
+const InputWrapper = styled.div`
   position: relative;
 `;
 
@@ -45,9 +33,13 @@ const InputIcon = styled.div`
   pointer-events: none;
 `;
 
-const Input = styled.input<InputProps>`
+interface InputProps {
+  startIcon?: boolean;
+}
+
+const InputElement = styled.input<InputProps>`
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: none;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   font-size: 14px;
   line-height: 17px;

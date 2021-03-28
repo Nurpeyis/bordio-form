@@ -5,13 +5,18 @@ import "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
-      white: string;
+      blue: string;
+      black: string;
       dark: string;
       darkBlue: string;
+      error: string;
       grey: string;
+      info: string;
       lightGrey: string;
       sandGrey: string;
-      blue: string;
+      success: string;
+      warning: string;
+      white: string;
     };
   }
 }

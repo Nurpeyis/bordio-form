@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Paper from "../../shared/Paper";
+import Paper from "@shared/elements/Paper";
 import SignUpForm from "./SignUpForm";
 
 export const SignUp = () => {
